@@ -112,7 +112,7 @@ def plot_temperature_field(nodes, elems, u, cmap='plasma', filename=None, show=T
         plt.close()
 
 
-def export_temperature_csv(nodes, u, filename='temperature_field_chimney.csv'):
+def export_temperature_csv(nodes, u, filename):
     """
     Export nodal temperature results to CSV file.
     Columns: x, y, temperature
