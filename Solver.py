@@ -149,7 +149,7 @@ def apply_convection(K, f, nodes, elems, conv_bcs):
         x1, y1 = coords[n1]
         x2, y2 = coords[n2]
         L = np.hypot(x2 - x1, y2 - y1)
-        #Modify K and F accordingly
+        
         
         K = (h * L / 6.0) * np.array([[2.0, 1.0],
                                           [1.0, 2.0]])

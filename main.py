@@ -19,7 +19,7 @@ from Solver import element_stiffness_triangle # vgalto
 nodes, elems, materials, k, bcs = read_input_file('Ex1.semfe')
 
 # Check Mesh Quality
-plot_mesh_interactive(nodes, elems, show=True, filename='interactive_mesh_cEx1.html')
+plot_mesh_interactive(nodes, elems, show=True, filename='interactive_mesh_Ex1.html')
 
 
 nnodes = nodes.shape[0]
