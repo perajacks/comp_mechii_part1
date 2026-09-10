@@ -15,6 +15,8 @@ The constants corresponding to the problems are k = 1.5 W/m °C, h = 50 W/m² °
 
 The argo used is: q = heat flow, k = heat conduction, h = heat transfer coefficient ,T∞ = ambient temperature.
 
+The Python code given in this repo has the perpuse of geting an inpute file of the stracture charakteristics and prudusing a stifness matrix K. Stifness matrix K is made by combining the local matrixes of each indivdual triangular element stifnes matrix. After establishing the K matrix we have to apply the boundary condtitions( Diricklet, Newman, Robin)
+
 
 
 
