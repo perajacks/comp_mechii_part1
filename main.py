@@ -16,10 +16,10 @@ from Solver import element_stiffness_triangle # vgalto
 
 
 # Import model info
-nodes, elems, materials, k, bcs = read_input_file('Ex1.semfe')
+nodes, elems, materials, k, bcs = read_input_file('chimney.semfe')
 
 # Check Mesh Quality
-plot_mesh_interactive(nodes, elems, show=True, filename='interactive_mesh_Ex1.html')
+plot_mesh_interactive(nodes, elems, show=True, filename='interactive_mesh_chimney.html')
 
 
 nnodes = nodes.shape[0]
@@ -52,7 +52,7 @@ Kmod, fmod = apply_dirichlet(Kmod, fmod, bc_nodes, bc_values)
 u = solve_system(Kmod, fmod)
 
 # Call it in main
-plot_temperature_field(nodes, elems, u, filename='temperature_field_Ex1.png')
+plot_temperature_field(nodes, elems, u, filename='temperature_field_chimney.png')
 #plot_mesh(nodes, elems)
 export_temperature_csv(nodes, u)
 
