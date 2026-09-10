@@ -1,6 +1,7 @@
 
-#2D HEAT TRANSFER USING FINITE ELEMENT ANALYSIS
+# 2D HEAT TRANSFER USING FINITE ELEMENT ANALYSIS
 
+## The problem
 The purpose of the code written here is to numerically predict the outcome of heat transfer within certain structures (as seen below), with the corresponding boundary conditions.
 
 <img width="444" height="248" alt="Screenshot 2026-09-11 at 01 39 33" src="https://github.com/user-attachments/assets/5a80f6cd-5310-4630-b058-64bed4f61976" />
@@ -29,7 +30,11 @@ Finally, we solve the equation KU = F, with U being the temperature of each node
 The graphs shown above are heat maps corresponding to the structures we applied our code to. By visual inspection, we can see that the heat maps correspond to the boundary conditions given.
 
 ## How to Run
-
+1) Use an old .semfe file or make a new one with the same format
+2) Change the name to your file on main.py line 19
+3) Change the name of the plot_mesh_interactive to your liking on main.py line 22
+4) Change the name of the plot_temperature_field to your liking on main.py line 55
+5) Change the name of the export_temperature_csv to your liking on main.py line 57
 
 
 
