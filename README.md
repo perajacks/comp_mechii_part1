@@ -1,5 +1,5 @@
 
-2D HEAT TRANSFER USING FINITE ELEMENT ANALYSIS
+#2D HEAT TRANSFER USING FINITE ELEMENT ANALYSIS
 
 The purpose of the code written here is to numerically predict the outcome of heat transfer within certain structures (as seen below), with the corresponding boundary conditions.
 
