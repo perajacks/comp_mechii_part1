@@ -21,6 +21,15 @@ Applying the boundary conditions will define a thermal load vector F.
 
 Finally, we solve the equation KU = F, with U being the temperature of each node in the structure.
 
+## Results
+<img width="500" height="300" alt="Screenshot 2026-09-11 at 02 14 33" src="https://github.com/user-attachments/assets/e034a541-102f-496e-a6c5-0aac9d8279c9" />
+
+<img width="500" height="300" alt="Screenshot 2026-09-11 at 02 14 08" src="https://github.com/user-attachments/assets/bd35b612-be60-42d0-8b50-27d57e11686c" />
+
+The graphs shown above are heat maps corresponding to the structures we applied our code to. By visual inspection, we can see that the heat maps correspond to the boundary conditions given.
+
+## How to Run
+
 
 
 
