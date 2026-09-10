@@ -30,11 +30,11 @@ Finally, we solve the equation KU = F, with U being the temperature of each node
 The graphs shown above are heat maps corresponding to the structures we applied our code to. By visual inspection, we can see that the heat maps correspond to the boundary conditions given.
 
 ## How to Run
-1) Use an old .semfe file or make a new one with the same format
-2) Change the name to your file on main.py line 19
-3) Change the name of the plot_mesh_interactive to your liking on main.py line 22
-4) Change the name of the plot_temperature_field to your liking on main.py line 55
-5) Change the name of the export_temperature_csv to your liking on main.py line 57
+1) Use an existing `.semfe` file, or create a new one following the same format.
+2) On `main.py` line 19, set the input filename to point to your `.semfe` file.
+3) On `main.py` line 22, set the desired output filename for `plot_mesh_interactive`.
+4) On `main.py` line 55, set the desired output filename for `plot_temperature_field`.
+5) On `main.py` line 57, set the desired output filename for `export_temperature_csv`.
 
 
 
