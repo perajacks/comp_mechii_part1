@@ -16,30 +16,30 @@ import numpy as np
 
 
 
-def element_stiffness_triangle(node_coords, k=1.0):
+def element_stiffness_triangle(node_coords, k):
     """
     Linear triangular element stiffness for steady-state conduction (Poisson equation)
     node_coords: (3,2) or (3,3) array of node coordinates
     returns 3x3 element stiffness matrix
     """
+    
     x1, y1 = node_coords[0, 0], node_coords[0, 1]
     x2, y2 = node_coords[1, 0], node_coords[1, 1]
     x3, y3 = node_coords[2, 0], node_coords[2, 1]
     
     
-    J = np.array([[x2-x1,x3-x1],[y2-y1,y3-y1]])
+    J = np.array([[x1-x3,y1-y3],[x2-x3,y2-y3]])
     det_J = np.linalg.det(J)
     abs_det_J = np.absolute(det_J)
     area = 0.5*abs_det_J# element area
-
      # Shape function derivatives (constant over element)
-    B = (1/(np.linalg.det(J))) * np.array([[(y2-y3),(y3-y1)],[(x3-x2),(x1-x3)]]) @ np.array([[1,0,-1],[0,1,-1]])
+    B = (1/det_J) * np.array([[(y2-y3),(y3-y1)],[(x3-x2),(x1-x3)]]) @ np.array([[1,0,-1],[0,1,-1]])
      
     Ke = k * area * (B.T @ B)
     return Ke
 
 
-def assemble_global(nodes, elems, k=2.5): 
+def assemble_global(nodes, elems, k): 
     """
     Assemble global stiffness matrix for triangular mesh
     nodes: Nx2 or Nx3 array
@@ -79,9 +79,13 @@ def apply_dirichlet(K, f, bc_nodes, bc_values):
     bc_nodes: array of node indices
     bc_values: array of prescribed values
     """
-
+    K = K.copy()
     f = f.copy()
+ 
     for node, val in zip(np.atleast_1d(bc_nodes), np.atleast_1d(bc_values)):
+       col = K[:, node]
+       f -= col * val
+    
         #modify K and f accordingly    
        K[node, :] = 0
        K[:, node] = 0
@@ -97,8 +101,9 @@ def apply_heat_flux(f, nodes, elems, heat_flux_bcs):
     fmod = f.copy()
 
     for elem_id, edge_id, q in heat_flux_bcs:
+
+  
      
-    
         conn = elems[int(elem_id)]       
         coords = nodes[conn, :2]      
     
@@ -112,6 +117,7 @@ def apply_heat_flux(f, nodes, elems, heat_flux_bcs):
         n1, n2 = edge_nodes
         x1, y1 = coords[n1]
         x2, y2 = coords[n2]
+      
     
         L = np.hypot(x2 - x1, y2 - y1)
       
