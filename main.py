@@ -54,7 +54,7 @@ u = solve_system(Kmod, fmod)
 # Call it in main
 plot_temperature_field(nodes, elems, u, filename='temperature_field_chimney.png')
 #plot_mesh(nodes, elems)
-export_temperature_csv(nodes, u)
+export_temperature_csv(nodes, u, filename='temperature_field_chimney.png' )
 
 
 
